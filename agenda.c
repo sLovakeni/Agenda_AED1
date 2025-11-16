@@ -14,7 +14,7 @@
 
 #define BUFFER_ENTRADA_NOME ( ( char * )( pMemoria + 6 * sizeof( int ) ) )
 #define BUFFER_ENTRADA_EMAIL ( ( char * )( pMemoria + 6 * sizeof( int ) + 50 * sizeof( char ) ) )
-// armazenar como: stringnome/0idade/0email/0
+// armazenar como: [stringnome]/0[idade][email]/0
 void * exibirMenu( void * pMemoria );
 void * adicionarRegistro( void * pMemoria );
 void * removerRegistro( void * pMemoria );
@@ -239,4 +239,5 @@ void listarRegistros( void * pMemoria ) {
         pCursor += strlen( ( char * )pCursor ) + 1;
     }
 }
+
 
