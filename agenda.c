@@ -14,7 +14,7 @@
 
 #define BUFFER_ENTRADA_NOME ( ( char * )( pMemoria + 6 * sizeof( int ) ) )
 #define BUFFER_ENTRADA_EMAIL ( ( char * )( pMemoria + 6 * sizeof( int ) + 50 * sizeof( char ) ) )
-
+// armazenar como: stringnome/0idade/0email/0
 void * exibirMenu( void * pMemoria );
 void * adicionarRegistro( void * pMemoria );
 void * removerRegistro( void * pMemoria );
@@ -25,7 +25,7 @@ int main() {
     void * pMemoria = malloc( TAMANHO_BLOCO_CONTROLE );
 
     if ( pMemoria == NULL ) {
-        printf( "Falha crÌtica ao alocar memÛria inicial.\n" );
+        printf( "Falha cr√≠tica ao alocar mem√≥ria inicial.\n" );
         return 1;
     }
 
@@ -97,7 +97,7 @@ void * adicionarRegistro( void * pMemoria ) {
     void * pNovoBuffer = realloc( pMemoria, TAMANHO_TOTAL_ALOCADO + REG_A );
 
     if ( pNovoBuffer == NULL ) {
-        printf( "ERRO: Falha ao alocar memÛria para novo registro! Nada foi adicionado.\n" );
+        printf( "ERRO: Falha ao alocar mem√≥ria para novo registro! Nada foi adicionado.\n" );
         return pMemoria;
     }
 
@@ -166,7 +166,7 @@ void * removerRegistro( void * pMemoria ) {
     void * pNovoBuffer = realloc( pMemoria, TAMANHO_TOTAL_ALOCADO );
 
     if ( pNovoBuffer == NULL && TAMANHO_TOTAL_ALOCADO > 0 ) {
-        printf( "Aviso: Falha ao tentar reduzir o buffer. MemÛria n„o foi liberada.\n" );
+        printf( "Aviso: Falha ao tentar reduzir o buffer. Mem√≥ria n√£o foi liberada.\n" );
         return pMemoria;
     }
 
@@ -239,3 +239,4 @@ void listarRegistros( void * pMemoria ) {
         pCursor += strlen( ( char * )pCursor ) + 1;
     }
 }
+
