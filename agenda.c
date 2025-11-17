@@ -170,6 +170,8 @@ void * removerRegistro( void * pMemoria ) {
         return pMemoria;
     }
 
+    pMemoria = pNovoBuffer;
+    
     printf( "Registro ID %d removido.\n", REG_A );
 
     return pNovoBuffer;
@@ -239,5 +241,6 @@ void listarRegistros( void * pMemoria ) {
         pCursor += strlen( ( char * )pCursor ) + 1;
     }
 }
+
 
 
